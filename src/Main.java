@@ -16,6 +16,7 @@ public class Main {
         String name = in.nextLine();
 // Вывод даты
         System.out.println("Сегодня: " + new Date());
+// объявление переменной cal
         Calendar cal = Calendar.getInstance();
 // Проверка даты на четность
 // Вывод приветствия в косоли
