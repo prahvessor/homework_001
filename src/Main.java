@@ -1,40 +1,32 @@
-// Написать программу, которая при запуске спрашивала бы имя в консоли.
-// если сегодня четное число - она должна отвечать "Привет, (имя)!"
-// если нечетное - "Здраствуй, (имя)!"
-// testing vcs
-// ver.2 using Time
+import utils.Greeting;
 
-
-import java.time.LocalDate;
-import java.time.MonthDay;
-
-import java.util.Scanner;
+/**
+ * РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ, РёСЃРїРѕР»СЊР·СѓСЏ РєР»Р°СЃСЃС‹ Рё РјРµС‚РѕРґС‹, РєРѕС‚РѕСЂР°СЏ Р±С‹ СЃРїСЂР°С€РёРІР°Р»Р° РёРјСЏ РёР· РєРѕРЅСЃРѕР»Рё.<br>
+ * Р•СЃР»Рё РґР°С‚Р° С‡РµС‚РЅР°СЏ, С‚Рѕ РІС‹РІРѕРґРёС‚СЊ РїСЂРёРІРµС‚СЃС‚РІРёРµ: "РџСЂРёРІРµС‚, (РёРјСЏ)!"<br>
+ * Р•СЃР»Рё РґР°С‚Р° РЅРµС‡РµС‚РЅР°СЏ, С‚Рѕ РІС‹РІРѕРґРёС‚СЊ РїСЂРёРІРµС‚СЃС‚РІРёРµ: "Р—РґСЂР°РІСЃС‚РІСѓР№, (РёРјСЏ)!"
+ *
+ * @author Emin K. Aliiev
+ * @version 3.6.00
+ * @since   2015-10-15
+ */
 
 public class Main {
+    /**
+     * Starts the program.
+     * Invokes method which displays the greeting.
+     *
+     * @see Greeting
+     * @see Greeting#getGreeting()
+     */
+    static {
+        System.out.println("Input your name, it must contains only alphabetical symbols, " +
+                "allowed spaces, hyphens and apostrophes between words.");
+    }
 
-    public static void main(String[] args){
-// Ввод имени из косноли
-        Scanner in = new Scanner(System.in); //создаём объект класса Scanner
-        System.out.print("Введите имя: ");
-        String name = in.nextLine(); // считывает строку из потока ввода и сохраняет в переменную
-// Вывод даты
-        System.out.println("Сегодня: " + LocalDate.now());
-// объявление переменной dayOfMonth
-        MonthDay m = MonthDay.now();
-        int dayOfMonth = m.getDayOfMonth();
-// Проверка даты на четность
-// Вывод приветствия в косоли
+    public static void main(String[] args) {
 
-        if ((dayOfMonth%2) == 0)
-        {
-            System.out.println("Привет, " + name);// четное число
-        }
-        else
-        {
-            System.out.println("Здравствуй, " + name);//нечетное число
-        }
+        Greeting greeting = new Greeting();
+        System.out.println(greeting.getGreeting());
+
     }
 }
-
-
-
