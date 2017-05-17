@@ -1,6 +1,7 @@
 # folders
 homework002_javadoc/
 out/
+.idea/
 
 # files
 *.iml
